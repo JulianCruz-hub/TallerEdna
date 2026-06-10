@@ -1,0 +1,191 @@
+// Pagina de registro del taller.
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Edna Moda</title>
+    <link rel="stylesheet" href="../css/body.css">
+    <link rel="stylesheet" href="../css/header.css?v=3">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/formulario.css?v=2">
+    <link rel="icon" type="image/png" href="../img/favicon-96x96.png" sizes="96x96" />
+    <script src="../js/api.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="landing.php">
+                <img src="../img/st,small,507x507-pad,600x600,f8f8f8.jpg" alt="Logo Taller Edna" class="logo">
+            </a>
+            <div class="site-name">
+                <span>Taller de Costura de Edna</span>
+                <span>La sastre de Villanos y Superheroes</span>
+            </div>
+        </div>
+
+        <nav class="menu_header">
+            <ul>
+                <li><a href="landing.php">Inicio</a></li>
+                <li><a href="Login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="form-page">
+        <section class="form-hero">
+            <div class="form-copy">
+                <span class="eyebrow">Alta de clientes</span>
+                <h1>Tu traje empieza aqui</h1>
+                <p>Traenos tu traje y Edna te devolvera un tesoro.</p>
+            </div>
+        </section>
+
+        <section class="form-shell">
+            <div id="form-feedback" class="form-feedback" hidden></div>
+
+            <form method="post" action="../php/registro_cliente.php" class="form-registro" id="form-registro">
+                <section class="form-card">
+                    <div class="section-head">
+                        <h2>Datos del cliente</h2>
+                        <p>Necesitamos tu identidad heroica y la base cromatica de tu estilo.</p>
+                    </div>
+
+                    <div class="field-grid">
+                        <label class="field">
+                            <span>Nombre de superheroe o supervillano</span>
+                            <input type="text" id="nombre-super" name="nombre-super" placeholder="Ej: Shadow Blaze"
+                                required>
+                        </label>
+
+                        <label class="field">
+                            <span>Superpoder</span>
+                            <input type="text" id="superpoder" name="superpoder" placeholder="Ej: Control del fuego"
+                                required>
+                        </label>
+
+                        <label class="field field-full">
+                            <span>Colores del traje</span>
+                            <input type="text" id="colores" name="colores" placeholder="Ej: Negro, rojo y titanio"
+                                required>
+                        </label>
+                    </div>
+                </section>
+
+                <section class="form-card">
+                    <div class="section-head">
+                        <h2>Acceso a la cuenta</h2>
+                        <p>Elige la contrasena con la que entraras despues al area privada.</p>
+                    </div>
+
+                    <div class="field-grid">
+                        <label class="field">
+                            <span>Crear contrasena</span>
+                            <input type="password" id="passwd" name="passwd" minlength="4"
+                                placeholder="Minimo 4 caracteres" required>
+                        </label>
+
+                        <label class="field">
+                            <span>Confirmar contrasena</span>
+                            <input type="password" id="passwd-confirm" name="passwd_confirm" minlength="4"
+                                placeholder="Repite la contrasena" required>
+                        </label>
+                    </div>
+                </section>
+
+                <section class="form-card">
+                    <div class="section-head">
+                        <h2>Datos del traje</h2>
+                        <p>Registra la primera prenda con la que entraras al laboratorio de Edna.</p>
+                    </div>
+
+                    <div class="field-grid">
+                        <label class="field field-full">
+                            <span>Nombre del traje</span>
+                            <input type="text" id="traje-nombre" name="traje-nombre"
+                                placeholder="Ej: Traje Principal / Traje de Sigilo" required>
+                        </label>
+
+
+                    </div>
+                </section>
+
+                <div class="form-actions">
+                    <button type="submit" class="submit-btn">Guardar registro</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid-3">
+                <div class="footer-column">
+                    <p>Laboratorio de Edna</p>
+                    <p>Mansi&oacute;n de los Incre&iacute;bles<br>Ciudad-Super<br> Calle (ubicaci&oacute;n secreta)</p>
+                    <p>edna@ednamoda.com</p>
+                </div>
+
+                <div class="footer-column">
+                    <p>Pol&iacute;tica de privacidad <br>
+                        Bases Legales <br>
+                        Pol&iacute;tica de cookies <br>
+                        Aviso legal <br>
+                        Pol&iacute;tica de compliance <br>
+                        C&oacute;digo &eacute;tico <br></p>
+                </div>
+
+                <div class="footer-column">
+                    <div class="redes-sociales">
+                        <a href="https://facebook.com" target="_blank" aria-label="Facebook"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M16 8h-2a2 2 0 0 0-2 2v8"></path>
+                                <line x1="10" y1="13" x2="16" y2="13"></line>
+                            </svg></a>
+                        <a href="https://instagram.com" target="_blank" aria-label="Instagram"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg></a>
+                        <a href="https://youtube.com" target="_blank" aria-label="YouTube"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2">
+                                <path
+                                    d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z">
+                                </path>
+                                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                            </svg></a>
+                        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                </path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg></a>
+                        <a href="https://twitter.com" target="_blank" aria-label="Twitter/X"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
+                                <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
+                            </svg></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>UNIVERSAL &copy; 2026. Todos los derechos reservados</p>
+        </div>
+    </footer>
+</body>
+
+</html>
+
+

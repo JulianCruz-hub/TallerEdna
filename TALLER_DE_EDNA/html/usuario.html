@@ -1,0 +1,151 @@
+<?php
+// Protege el area de cliente: requiere sesion de usuario logueado.
+require_once __DIR__ . '/../php/session_init.php';
+
+if (empty($_SESSION['cliente_id'])) {
+    app_redirect('Login.html?' . http_build_query([
+        'error' => 'Debes iniciar sesion para acceder al area de usuario.',
+    ]));
+}
+
+$clienteNombre = htmlspecialchars((string)($_SESSION['cliente_nombre'] ?? 'Usuario'), ENT_QUOTES, 'UTF-8');
+$clienteEmail = htmlspecialchars((string)($_SESSION['cliente_email'] ?? ''), ENT_QUOTES, 'UTF-8');
+?>
+// Pagina de area de usuario del taller.
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area de usuario</title>
+    <link rel="stylesheet" href="../css/body.css">
+    <link rel="stylesheet" href="../css/header.css?v=4">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/usuarios.css">
+    <link rel="icon" type="image/png" href="../img/favicon-96x96.png" sizes="96x96" />
+</head>
+
+<body class="admin-page">
+    <header>
+        <div class="logo-container">
+            <a href="landing.php">
+                <img src="../img/st,small,507x507-pad,600x600,f8f8f8.jpg" alt="Logo Taller Edna" class="logo">
+            </a>
+            <div class="site-name">
+                <span>Taller de Costura de Edna</span>
+                <span>La sastre de Villanos y Superheroes</span>
+            </div>
+        </div>
+
+        <div class="user-options">
+            <div class="user-session">
+                <span id="usuario-nombre"><?= $clienteNombre ?></span>
+                <span id="usuario-email"><?= $clienteEmail ?></span>
+            </div>
+            <a href="../php/logout.php" class="btn-accion">Cerrar sesion</a>
+        </div>
+    </header>
+
+    <main class="admin-grid">
+        <div class="shell">
+            <div class="panel panel-intro">
+                <h1>Area de usuario</h1>
+                <div class="tabs">
+                    <a class="tab-link" href="#equipo" data-tab="equipo">Equipo</a>
+                    <a class="tab-link" href="#citas" data-tab="citas">Citas</a>
+                </div>
+            </div>
+
+            <div id="notices"></div>
+            <div id="errors"></div>
+
+            <div id="tab-equipo" class="tab-content" style="display:none;">
+                <div class="panel">
+                    <h2>Mi equipo y su estado</h2>
+                    <p>Consulta el seguimiento de tus trajes y el estado actual del taller.</p>
+                    <div id="trajes-container"></div>
+                </div>
+            </div>
+
+            <div id="tab-citas" class="tab-content" style="display:none;">
+                <div class="panel">
+                    <h2>Mis citas</h2>
+                    <p>Solo veras las citas ligadas a tu cuenta y a tus propios trajes.</p>
+                    <div id="citas-container"></div>
+                </div>
+            </div>
+
+            <script src="../js/api.js" defer></script>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid-3">
+                <div class="footer-column">
+                    <p>Laboratorio de Edna</p>
+                    <p>Mansion de los Increibles<br>Ciudad-Super<br> Calle (ubicacion secreta) </p>
+                    <p>edna@ednamoda.com</p>
+                </div>
+
+                <div class="footer-column">
+                    <p>Politica de privacidad <br>
+                        Bases Legales <br>
+                        Politica de cookies <br>
+                        Aviso legal <br>
+                        Politica de compliance <br>
+                        Codigo Etico <br></p>
+                </div>
+
+                <div class="footer-column">
+                    <div class="redes-sociales">
+                        <a href="https://facebook.com" target="_blank" aria-label="Facebook"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M16 8h-2a2 2 0 0 0-2 2v8"></path>
+                                <line x1="10" y1="13" x2="16" y2="13"></line>
+                            </svg></a>
+                        <a href="https://instagram.com" target="_blank" aria-label="Instagram"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg></a>
+                        <a href="https://youtube.com" target="_blank" aria-label="YouTube"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2">
+                                <path
+                                    d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z">
+                                </path>
+                                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                            </svg></a>
+                        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                </path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg></a>
+                        <a href="https://twitter.com" target="_blank" aria-label="Twitter/X"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
+                                <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
+                            </svg></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>UNIVERSAL &copy; 2026. Todos los derechos reservados</p>
+        </div>
+    </footer>
+</body>
+
+</html>

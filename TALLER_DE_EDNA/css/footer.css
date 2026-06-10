@@ -1,0 +1,120 @@
+footer {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    background: black;
+    color: white;
+    padding: 25px 15px 15px;
+    margin-top: 20px;
+    box-sizing: border-box;
+}
+
+/* contenedor general */
+.footer-container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* 3 columnas */
+.footer-grid-3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 25px;
+    margin-bottom: 20px;
+}
+
+/* columnas */
+.footer-column {
+    flex: 1;
+}
+
+.footer-column h4 {
+    color: tomato;
+    margin-bottom: 10px;
+    font-size: 1.05rem;
+    /* más pequeño */
+}
+
+.footer-column p,
+.footer-column li {
+    margin-bottom: 6px;
+    line-height: 1.4;
+}
+
+.footer-column a {
+    color: silver;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-column a:hover {
+    color: tomato;
+}
+
+/* redes sociales */
+.redes-sociales {
+    display: flex;
+    gap: 10px;
+}
+
+/* iconos */
+.redes-sociales a {
+    width: 46px;
+    height: 46px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: black;
+    transition: 0.2s;
+    box-sizing: border-box;
+}
+
+.redes-sociales svg {
+    width: 24px;
+    height: 24px;
+    stroke: white;
+    flex-shrink: 0;
+}
+
+.redes-sociales a:hover {
+    background: #FF6347;
+    transform: translateY(-2px);
+}
+
+/* footer  */
+.footer-bottom {
+    width: 100%;
+    border-top: 1px solid dimgrey;
+    padding-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: silver;
+    font-size: 0.9rem;
+    /* más compacto */
+    box-sizing: border-box;
+}
+
+.footer-bottom p {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+    .footer-grid-3 {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer-column {
+        text-align: center;
+    }
+
+    .redes-sociales {
+        justify-content: center;
+    }
+}

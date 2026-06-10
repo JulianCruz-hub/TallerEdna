@@ -1,0 +1,88 @@
+.user-stack {
+    display: grid;
+    gap: 12px;
+}
+
+.status-item {
+    border: 1px solid gainsboro;
+    border-radius: 10px;
+    background: white;
+    overflow: hidden;
+}
+
+.status-item summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 14px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    color: black;
+}
+
+.status-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.status-copy {
+    padding: 0 16px 16px;
+    color: dimgray;
+    line-height: 1.5;
+}
+
+.status-chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: black;
+    color: white;
+    font-size: 13px;
+}
+
+.status-chip.costura {
+    background: dimgrey;
+}
+
+.status-chip.diseno {
+    background: chocolate;
+}
+
+.appointment-box {
+    display: grid;
+    gap: 14px;
+    color: dimgray;
+}
+
+.appointment-box p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+.appointment-notes {
+    margin: 0;
+    padding-left: 18px;
+    display: grid;
+    gap: 6px;
+}
+
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+.user-table th,
+.user-table td {
+    padding: 12px;
+    border-bottom: 1px solid whitesmoke;
+    text-align: left;
+}
+
+.user-table th {
+    background: snow;
+}

@@ -1,0 +1,161 @@
+header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 9000;
+    background: black;
+    color: silver;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    min-height: 5rem;
+    box-sizing: border-box;
+    box-shadow: 0 0 25px color-mix(in srgb, black 60%, transparent);
+    border-bottom: 2px solid firebrick;
+    overflow-x: hidden;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    min-width: 0;
+}
+
+.logo-container a {
+    display: flex;
+    flex-shrink: 0;
+}
+
+.logo {
+    height: 55px;
+    width: 55px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 4px color-mix(in srgb, white 20%, transparent));
+}
+
+.site-name {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    line-height: 1.15;
+    min-width: 0;
+}
+
+.site-name span {
+    display: block;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+.site-name span:first-child {
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 0.3px;
+}
+
+.site-name span:last-child {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: silver;
+}
+
+.menu_header {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
+
+.menu_header ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    padding: 0;
+    margin: 0;
+}
+
+.menu_header li a {
+    text-decoration: none;
+    color: silver;
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    transition: all 0.25s ease;
+}
+
+.menu_header li a:hover {
+    color: tomato;
+    text-shadow: 0 0 6px color-mix(in srgb, tomato 60%, transparent);
+}
+
+.user-options a {
+    padding: 10px 18px;
+    background: firebrick;
+    color: white;
+    border-radius: 4px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.25s ease;
+    box-shadow: 0 0 10px color-mix(in srgb, firebrick 40%, transparent);
+}
+
+.user-options a:hover {
+    background: #FF6347;
+    box-shadow: 0 0 15px color-mix(in srgb, #FF6347 60%, transparent);
+    transform: translateY(-2px);
+}
+
+.user-options {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-shrink: 0;
+}
+
+.user-session {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.15rem;
+    line-height: 1.1;
+    text-align: right;
+}
+
+.user-session span:first-child {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: white;
+}
+
+.user-session span:last-child {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: silver;
+}
+
+.user-session--single span {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 0.75rem 1rem;
+        min-height: auto;
+    }
+
+    .site-name span:first-child {
+        font-size: 0.9rem;
+    }
+
+    .site-name span:last-child {
+        font-size: 0.75rem;
+    }
+
+    .user-session {
+        display: none;
+    }
+}

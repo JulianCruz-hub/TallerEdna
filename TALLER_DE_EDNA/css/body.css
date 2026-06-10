@@ -1,0 +1,362 @@
+:root {
+    --edna-accent: #FF6347;
+}
+
+@font-face {
+    font-family: 'League Spartan';
+    src: url('../fonts/LeagueSpartan-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+html,
+body,
+button,
+input,
+textarea,
+select,
+option {
+    font-family: 'League Spartan', sans-serif;
+}
+
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+    background: color-mix(in srgb, white 80%, transparent);
+    border-radius: 8px;
+    margin: 0;
+    width: 100%;
+    max-width: none;
+    box-sizing: border-box;
+}
+
+/*SECCIONES DIVIDIDAS */
+
+.split-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+    margin: 40px 0;
+    padding: 2.5rem;
+    border-radius: 18px;
+    box-shadow: 0 14px 36px var(--edna-shadow);
+}
+
+.image-half {
+    text-align: center;
+}
+
+.image-half img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+#clientes .image-half img {
+    width: min(100%, 360px);
+    height: 360px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    margin: 0 auto;
+}
+
+.text-half {
+    text-align: left;
+    padding: 20px;
+}
+
+.text-half h2 {
+    margin-top: 0;
+    color: black;
+}
+
+.text-half p {
+    line-height: 1.6;
+    color: dimgrey;
+}
+
+#historia {
+    background: linear-gradient(135deg, var(--edna-bone), var(--edna-champagne));
+}
+
+#clientes {
+    background: linear-gradient(135deg, color-mix(in srgb, peachpuff 95%, transparent), var(--edna-rose));
+}
+
+.services-section {
+    background: linear-gradient(180deg, var(--edna-champagne), color-mix(in srgb, linen 96%, transparent));
+}
+
+.testimonials-section {
+    background: linear-gradient(180deg, color-mix(in srgb, linen 97%, transparent), color-mix(in srgb, peachpuff 95%, transparent));
+}
+
+#historia h2,
+#clientes h2,
+.services-section h2,
+.testimonials-section h2 {
+    color: maroon;
+}
+
+#historia p,
+#clientes p,
+.service-card p {
+    color: darkslategray;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, color-mix(in srgb, saddlebrown 35%, transparent), transparent);
+    margin: 1.5rem 0;
+}
+
+/*HERO SECTION */
+
+.hero {
+    position: relative;
+    height: 70vh;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 40px;
+}
+
+.hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: color-mix(in srgb, black 50%, transparent);
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px color-mix(in srgb, black 70%, transparent);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 2px color-mix(in srgb, black 70%, transparent);
+}
+
+.cta-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background: var(--edna-accent);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.cta-btn:hover {
+    background: color-mix(in srgb, var(--edna-accent) 82%, black);
+}
+
+/*CONTENEDOR GENERAL */
+
+.container {
+    width: calc(100% - 40px);
+    max-width: none;
+    margin: 0 auto;
+}
+
+/*SECCIONES ADICIONALES */
+
+.services-section,
+.testimonials-section,
+.contact-section {
+    padding: 60px 0;
+    background: var(--edna-bone);
+    margin: 40px 0;
+    border-radius: 18px;
+    box-shadow: 0 14px 36px var(--edna-shadow);
+}
+
+.services-section h2,
+.testimonials-section h2,
+.contact-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: black;
+    font-size: 2.5rem;
+}
+
+/*SERVICIOS */
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background: color-mix(in srgb, seashell 95%, transparent);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px color-mix(in srgb, black 10%, transparent);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-card h3 {
+    color: black;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    color: dimgrey;
+    line-height: 1.6;
+}
+
+/*TESTIMONIOS */
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+
+/*FLIP CARDS TESTIMONIALES*/
+
+.flip-card {
+    background-color: transparent;
+    width: 250px;
+    height: 250px;
+    perspective: 1000px;
+    margin: 0 auto;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px color-mix(in srgb, black 10%, transparent);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* CARA FRONTAL */
+.flip-card-front {
+    background-color: white;
+    color: dimgrey;
+}
+
+.flip-card-front .quote-icon {
+    font-size: 2rem;
+    color: black;
+    margin-bottom: 15px;
+}
+
+.flip-card-front p {
+    font-style: italic;
+    color: dimgrey;
+    margin-bottom: 15px;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.flip-card-front cite {
+    color: black;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* CARA TRASERA */
+.flip-card-back {
+    background-color: black;
+    color: white;
+    transform: rotateY(180deg);
+    padding: 0;
+    overflow: hidden;
+}
+
+.flip-card-back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.flip-card-back p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0;
+    text-align: center;
+}
+
+.flip-card-back cite {
+    color: silver;
+    font-size: 0.8rem;
+    margin-top: 10px;
+}
+
+.quote-icon img {
+    width: 40px;
+    height: auto;
+}
